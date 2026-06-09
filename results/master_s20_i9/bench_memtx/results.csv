@@ -1,0 +1,5 @@
+prefix,benchmark,label,ops,elapsed_s,tps
+master_s20_i9,bench_memtx,INSERT,1000000,12.439,80394
+master_s20_i9,bench_memtx,SELECT_POINT,1000000,0.440,2272777
+master_s20_i9,bench_memtx,SELECT_RANGE,1000000,3.441,290617
+master_s20_i9,bench_memtx,DELETE,1000000,10.667,93744

@@ -1,0 +1,5 @@
+prefix,benchmark,label,ops,elapsed_s,tps
+so_s30_i10,bench_vinyl,INSERT,600000,10.281,58357
+so_s30_i10,bench_vinyl,SELECT_POINT,600000,10.866,55220
+so_s30_i10,bench_vinyl,SELECT_RANGE,600000,4.927,121777
+so_s30_i10,bench_vinyl,DELETE,600000,8.839,67881

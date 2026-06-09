@@ -1,0 +1,7 @@
+.DS_Store
+*.snap
+*.xlog
+*.vylog
+*.run
+*.index
+/.venv

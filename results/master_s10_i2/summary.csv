@@ -1,0 +1,21 @@
+prefix,benchmark,label,ops,elapsed_s,tps
+master_s10_i2,bench_memtx,INSERT,500000,5.638,88677
+master_s10_i2,bench_memtx,SELECT_POINT,500000,0.187,2670609
+master_s10_i2,bench_memtx,SELECT_RANGE,500000,1.768,282775
+master_s10_i2,bench_memtx,DELETE,500000,5.625,88893
+master_s10_i2,bench_vinyl,INSERT,200000,2.481,80605
+master_s10_i2,bench_vinyl,SELECT_POINT,200000,3.162,63251
+master_s10_i2,bench_vinyl,SELECT_RANGE,200000,1.581,126514
+master_s10_i2,bench_vinyl,DELETE,200000,3.247,61592
+master_s10_i2,bench_sort_order,plain      INSERT,300000,3.877,77371
+master_s10_i2,bench_sort_order,plain      SELECT_RANGE,300000,1.002,299274
+master_s10_i2,bench_sort_order,plain      SELECT_RANGE_REV,300000,0.995,301408
+master_s10_i2,bench_sort_order,plain      DELETE,300000,2.985,100511
+master_s10_i2,bench_sort_order,all_desc   INSERT,300000,3.420,87714
+master_s10_i2,bench_sort_order,all_desc   SELECT_RANGE,300000,1.011,296871
+master_s10_i2,bench_sort_order,all_desc   SELECT_RANGE_REV,300000,0.988,303503
+master_s10_i2,bench_sort_order,all_desc   DELETE,300000,3.936,76228
+master_s10_i2,bench_sort_order,mixed      INSERT,300000,3.672,81691
+master_s10_i2,bench_sort_order,mixed      SELECT_RANGE,300000,1.011,296671
+master_s10_i2,bench_sort_order,mixed      SELECT_RANGE_REV,300000,0.993,302088
+master_s10_i2,bench_sort_order,mixed      DELETE,300000,3.879,77333

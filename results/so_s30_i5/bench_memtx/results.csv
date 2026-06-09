@@ -1,0 +1,5 @@
+prefix,benchmark,label,ops,elapsed_s,tps
+so_s30_i5,bench_memtx,INSERT,1500000,18.312,81912
+so_s30_i5,bench_memtx,SELECT_POINT,1500000,0.627,2392022
+so_s30_i5,bench_memtx,SELECT_RANGE,1500000,5.631,266389
+so_s30_i5,bench_memtx,DELETE,1500000,17.318,86616

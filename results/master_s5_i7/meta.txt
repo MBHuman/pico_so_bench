@@ -1,0 +1,5 @@
+prefix=master_s5_i7
+scale=5
+binary=/home/mbhuman/.local/bin/tarantool-master
+version=Tarantool 2.11.8-372-g5043aa505
+date=2026-06-09T14:15:30Z

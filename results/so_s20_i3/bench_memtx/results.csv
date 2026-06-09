@@ -1,0 +1,5 @@
+prefix,benchmark,label,ops,elapsed_s,tps
+so_s20_i3,bench_memtx,INSERT,1000000,11.874,84216
+so_s20_i3,bench_memtx,SELECT_POINT,1000000,0.422,2370639
+so_s20_i3,bench_memtx,SELECT_RANGE,1000000,3.644,274423
+so_s20_i3,bench_memtx,DELETE,1000000,11.790,84814

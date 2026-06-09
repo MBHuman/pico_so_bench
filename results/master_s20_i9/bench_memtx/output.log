@@ -1,0 +1,8 @@
+Loading 2000000 rows ...
+Load done: 2000000 rows in 3.2s
+
+[BENCH] INSERT                  ops=1000000   elapsed= 12.439s  TPS=80394
+[BENCH] SELECT_POINT            ops=1000000   elapsed=  0.440s  TPS=2272777
+[BENCH] SELECT_RANGE            ops=1000000   elapsed=  3.441s  TPS=290617
+[BENCH] DELETE                  ops=1000000   elapsed= 10.667s  TPS=93744
+[BENCH] DONE

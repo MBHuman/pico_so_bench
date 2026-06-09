@@ -1,0 +1,5 @@
+prefix,benchmark,label,ops,elapsed_s,tps
+master_s1_i6,bench_memtx,INSERT,50000,0.518,96471
+master_s1_i6,bench_memtx,SELECT_POINT,50000,0.019,2633616
+master_s1_i6,bench_memtx,SELECT_RANGE,50000,0.184,272429
+master_s1_i6,bench_memtx,DELETE,50000,0.508,98357

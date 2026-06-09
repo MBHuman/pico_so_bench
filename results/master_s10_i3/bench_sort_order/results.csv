@@ -1,0 +1,13 @@
+prefix,benchmark,label,ops,elapsed_s,tps
+master_s10_i3,bench_sort_order,plain      INSERT,300000,4.076,73595
+master_s10_i3,bench_sort_order,plain      SELECT_RANGE,300000,1.008,297476
+master_s10_i3,bench_sort_order,plain      SELECT_RANGE_REV,300000,0.972,308626
+master_s10_i3,bench_sort_order,plain      DELETE,300000,2.995,100160
+master_s10_i3,bench_sort_order,all_desc   INSERT,300000,3.460,86716
+master_s10_i3,bench_sort_order,all_desc   SELECT_RANGE,300000,0.997,300906
+master_s10_i3,bench_sort_order,all_desc   SELECT_RANGE_REV,300000,0.975,307596
+master_s10_i3,bench_sort_order,all_desc   DELETE,300000,3.596,83421
+master_s10_i3,bench_sort_order,mixed      INSERT,300000,3.151,95197
+master_s10_i3,bench_sort_order,mixed      SELECT_RANGE,300000,1.000,299904
+master_s10_i3,bench_sort_order,mixed      SELECT_RANGE_REV,300000,0.972,308599
+master_s10_i3,bench_sort_order,mixed      DELETE,300000,2.698,111198

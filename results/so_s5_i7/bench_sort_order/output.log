@@ -1,0 +1,21 @@
+sort_order benchmark — scale=5  rows=300000  bench_ops=150000
+
+--- variant: plain ---
+[BENCH] plain      INSERT           ops=150000    elapsed=  1.677s  TPS=89438
+[BENCH] plain      SELECT_RANGE     ops=150000    elapsed=  0.522s  TPS=287081
+[BENCH] plain      SELECT_RANGE_REV  ops=150000    elapsed=  0.511s  TPS=293644
+[BENCH] plain      DELETE           ops=150000    elapsed=  1.444s  TPS=103847
+
+--- variant: all_desc ---
+[BENCH] all_desc   INSERT           ops=150000    elapsed=  1.961s  TPS=76498
+[BENCH] all_desc   SELECT_RANGE     ops=150000    elapsed=  0.525s  TPS=285740
+[BENCH] all_desc   SELECT_RANGE_REV  ops=150000    elapsed=  0.504s  TPS=297333
+[BENCH] all_desc   DELETE           ops=150000    elapsed=  1.635s  TPS=91752
+
+--- variant: mixed ---
+[BENCH] mixed      INSERT           ops=150000    elapsed=  1.826s  TPS=82125
+[BENCH] mixed      SELECT_RANGE     ops=150000    elapsed=  0.513s  TPS=292299
+[BENCH] mixed      SELECT_RANGE_REV  ops=150000    elapsed=  0.506s  TPS=296227
+[BENCH] mixed      DELETE           ops=150000    elapsed=  1.269s  TPS=118185
+
+[BENCH] DONE

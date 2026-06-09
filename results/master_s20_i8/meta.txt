@@ -1,0 +1,5 @@
+prefix=master_s20_i8
+scale=20
+binary=/home/mbhuman/.local/bin/tarantool-master
+version=Tarantool 2.11.8-372-g5043aa505
+date=2026-06-09T14:42:53Z

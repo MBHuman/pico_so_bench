@@ -1,0 +1,5 @@
+prefix,benchmark,label,ops,elapsed_s,tps
+master_s5_i4,bench_vinyl,INSERT,100000,1.239,80710
+master_s5_i4,bench_vinyl,SELECT_POINT,100000,2.300,43485
+master_s5_i4,bench_vinyl,SELECT_RANGE,100000,0.875,114228
+master_s5_i4,bench_vinyl,DELETE,100000,1.178,84907

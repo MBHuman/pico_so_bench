@@ -1,0 +1,21 @@
+prefix,benchmark,label,ops,elapsed_s,tps
+master_s30_i5,bench_memtx,INSERT,1500000,18.118,82789
+master_s30_i5,bench_memtx,SELECT_POINT,1500000,0.577,2600395
+master_s30_i5,bench_memtx,SELECT_RANGE,1500000,5.353,280210
+master_s30_i5,bench_memtx,DELETE,1500000,18.462,81247
+master_s30_i5,bench_vinyl,INSERT,600000,9.415,63731
+master_s30_i5,bench_vinyl,SELECT_POINT,600000,10.417,57599
+master_s30_i5,bench_vinyl,SELECT_RANGE,600000,4.737,126667
+master_s30_i5,bench_vinyl,DELETE,600000,7.727,77647
+master_s30_i5,bench_sort_order,plain      INSERT,900000,11.125,80900
+master_s30_i5,bench_sort_order,plain      SELECT_RANGE,900000,3.150,285683
+master_s30_i5,bench_sort_order,plain      SELECT_RANGE_REV,900000,3.677,244765
+master_s30_i5,bench_sort_order,plain      DELETE,900000,10.362,86856
+master_s30_i5,bench_sort_order,all_desc   INSERT,900000,10.760,83642
+master_s30_i5,bench_sort_order,all_desc   SELECT_RANGE,900000,3.052,294883
+master_s30_i5,bench_sort_order,all_desc   SELECT_RANGE_REV,900000,3.727,241498
+master_s30_i5,bench_sort_order,all_desc   DELETE,900000,10.785,83453
+master_s30_i5,bench_sort_order,mixed      INSERT,900000,10.336,87075
+master_s30_i5,bench_sort_order,mixed      SELECT_RANGE,900000,3.100,290277
+master_s30_i5,bench_sort_order,mixed      SELECT_RANGE_REV,900000,3.732,241144
+master_s30_i5,bench_sort_order,mixed      DELETE,900000,11.404,78919

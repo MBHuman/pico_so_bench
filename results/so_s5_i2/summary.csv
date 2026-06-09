@@ -1,0 +1,21 @@
+prefix,benchmark,label,ops,elapsed_s,tps
+so_s5_i2,bench_memtx,INSERT,250000,2.974,84048
+so_s5_i2,bench_memtx,SELECT_POINT,250000,0.103,2430188
+so_s5_i2,bench_memtx,SELECT_RANGE,250000,0.889,281239
+so_s5_i2,bench_memtx,DELETE,250000,2.664,93834
+so_s5_i2,bench_vinyl,INSERT,100000,1.493,66958
+so_s5_i2,bench_vinyl,SELECT_POINT,100000,1.784,56055
+so_s5_i2,bench_vinyl,SELECT_RANGE,100000,0.892,112059
+so_s5_i2,bench_vinyl,DELETE,100000,1.160,86209
+so_s5_i2,bench_sort_order,plain      INSERT,150000,1.818,82520
+so_s5_i2,bench_sort_order,plain      SELECT_RANGE,150000,0.535,280546
+so_s5_i2,bench_sort_order,plain      SELECT_RANGE_REV,150000,0.522,287314
+so_s5_i2,bench_sort_order,plain      DELETE,150000,1.571,95468
+so_s5_i2,bench_sort_order,all_desc   INSERT,150000,1.876,79957
+so_s5_i2,bench_sort_order,all_desc   SELECT_RANGE,150000,0.560,267786
+so_s5_i2,bench_sort_order,all_desc   SELECT_RANGE_REV,150000,0.544,275849
+so_s5_i2,bench_sort_order,all_desc   DELETE,150000,1.649,90955
+so_s5_i2,bench_sort_order,mixed      INSERT,150000,1.498,100156
+so_s5_i2,bench_sort_order,mixed      SELECT_RANGE,150000,0.551,272402
+so_s5_i2,bench_sort_order,mixed      SELECT_RANGE_REV,150000,0.544,275859
+so_s5_i2,bench_sort_order,mixed      DELETE,150000,1.909,78567

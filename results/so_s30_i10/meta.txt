@@ -1,0 +1,5 @@
+prefix=so_s30_i10
+scale=30
+binary=/home/mbhuman/.local/bin/tarantool-so
+version=Tarantool 2.11.8-378-g027adef99
+date=2026-06-09T14:06:29Z
