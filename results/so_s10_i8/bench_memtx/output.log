@@ -1,8 +1,10 @@
 Loading 1000000 rows ...
-Load done: 1000000 rows in 1.5s
+Load done: 1000000 rows in 1.7s
 
-[BENCH] INSERT                  ops=500000    elapsed=  5.583s  TPS=89552
-[BENCH] SELECT_POINT            ops=500000    elapsed=  0.240s  TPS=2082240
-[BENCH] SELECT_RANGE            ops=500000    elapsed=  1.791s  TPS=279219
-[BENCH] DELETE                  ops=500000    elapsed=  5.338s  TPS=93665
+[BENCH] INSERT                  ops=500000    elapsed=  6.453s  TPS=77479
+[BENCH] SELECT_POINT            ops=500000    elapsed=  0.227s  TPS=2198358
+[BENCH] SELECT_RANGE            ops=500000    elapsed=  1.935s  TPS=258334
+[BENCH] UPDATE                  ops=500000    elapsed=  7.193s  TPS=69512
+[BENCH] REPLACE                 ops=500000    elapsed=  8.067s  TPS=61980
+[BENCH] DELETE                  ops=500000    elapsed=  5.822s  TPS=85886
 [BENCH] DONE

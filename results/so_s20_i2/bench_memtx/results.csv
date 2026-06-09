@@ -1,5 +1,7 @@
 prefix,benchmark,label,ops,elapsed_s,tps
-so_s20_i2,bench_memtx,INSERT,1000000,11.473,87163
-so_s20_i2,bench_memtx,SELECT_POINT,1000000,0.464,2157271
-so_s20_i2,bench_memtx,SELECT_RANGE,1000000,3.362,297413
-so_s20_i2,bench_memtx,DELETE,1000000,10.734,93163
+so_s20_i2,bench_memtx,INSERT,1000000,12.012,83246
+so_s20_i2,bench_memtx,SELECT_POINT,1000000,0.392,2548285
+so_s20_i2,bench_memtx,SELECT_RANGE,1000000,3.682,271575
+so_s20_i2,bench_memtx,UPDATE,1000000,13.039,76690
+so_s20_i2,bench_memtx,REPLACE,1000000,15.314,65301
+so_s20_i2,bench_memtx,DELETE,1000000,11.828,84543

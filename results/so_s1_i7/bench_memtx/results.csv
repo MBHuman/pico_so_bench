@@ -1,5 +1,7 @@
 prefix,benchmark,label,ops,elapsed_s,tps
-so_s1_i7,bench_memtx,INSERT,50000,0.695,71951
-so_s1_i7,bench_memtx,SELECT_POINT,50000,0.019,2576021
-so_s1_i7,bench_memtx,SELECT_RANGE,50000,0.179,278585
-so_s1_i7,bench_memtx,DELETE,50000,0.438,114079
+so_s1_i7,bench_memtx,INSERT,50000,0.633,78979
+so_s1_i7,bench_memtx,SELECT_POINT,50000,0.026,1909864
+so_s1_i7,bench_memtx,SELECT_RANGE,50000,0.190,263562
+so_s1_i7,bench_memtx,UPDATE,50000,0.635,78790
+so_s1_i7,bench_memtx,REPLACE,50000,0.684,73115
+so_s1_i7,bench_memtx,DELETE,50000,0.545,91672

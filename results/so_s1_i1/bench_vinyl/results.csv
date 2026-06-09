@@ -1,5 +1,7 @@
 prefix,benchmark,label,ops,elapsed_s,tps
-so_s1_i1,bench_vinyl,INSERT,20000,0.296,67517
-so_s1_i1,bench_vinyl,SELECT_POINT,20000,0.299,66827
-so_s1_i1,bench_vinyl,SELECT_RANGE,20000,0.264,75897
-so_s1_i1,bench_vinyl,DELETE,20000,0.248,80773
+so_s1_i1,bench_vinyl,INSERT,20000,0.320,62420
+so_s1_i1,bench_vinyl,SELECT_POINT,20000,0.269,74395
+so_s1_i1,bench_vinyl,SELECT_RANGE,20000,0.217,92045
+so_s1_i1,bench_vinyl,UPDATE,20000,0.311,64244
+so_s1_i1,bench_vinyl,REPLACE,20000,0.381,52492
+so_s1_i1,bench_vinyl,DELETE,20000,0.197,101406

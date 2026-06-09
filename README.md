@@ -1,74 +1,93 @@
 # pico_so_bench
 
-Benchmark suite for [Tarantool](https://www.tarantool.io/) evaluating `sort_order` performance.
+Набор бенчмарков для сравнения производительности разных сборок [Tarantool](https://git.picodata.io/core/tarantool).
 
-This suite compares performance between master and patched builds of Tarantool, focusing on ascending, descending, and mixed order indexes in Memtx and Vinyl engines.
+Основная цель — численно оценить, не вносит ли новая ветка регрессии по TPS относительно базовой, и проверить, как поведение меняется при росте объёма данных (параметр `SCALE`).
 
-## Benchmarks
+## Что тестируется
 
-| Benchmark | Pattern | Purpose |
-|-----------|---------|---------|
-| **Memtx** | Point / Range / Insert / Delete | Baseline memory engine performance and regressions |
-| **Vinyl** | Point / Range / Insert / Delete | Disk-based engine performance and write-amp evaluation |
-| **Sort Order** | ASC / DESC / MIXED parts | Evaluate overhead of custom sort orders in index parts |
+| Бенчмарк | Операции | Сравнение веток |
+|---|---|---|
+| `bench_memtx.lua` | INSERT, GET, SELECT (range), UPDATE, REPLACE, DELETE | Да |
+| `bench_vinyl.lua` | те же операции, движок vinyl | Да |
+| `bench_sort_order.lua` | INSERT, SELECT\_RANGE, SELECT\_RANGE\_REV, UPDATE, REPLACE, DELETE × три режима сортировки (plain / all\_desc / mixed) | Только если в обеих ветках есть поддержка sort\_order |
 
-## Quick start
+Подробнее о каждом бенчмарке — в [reports/REPORTS.md](reports/REPORTS.md).
+
+## Быстрый старт
 
 ```bash
+# Собрать результаты и построить графики
 make all
 ```
 
-Results are stored in `./results/` and visualized in `./plots/`.
+Результаты сохраняются в `results/`, графики — в `plots_stat/`.
 
-## Performance Report
-
-Comprehensive analysis of the benchmark results, including statistical significance and engine comparisons, can be found in:
-
-👉 **[REPORT.md](REPORT.md)**
-
-## Usage
+## Запуск вручную
 
 ```bash
-./run_repeated_scaling.sh <tarantool_binary> <prefix> <iterations> <scale1> [scale2]...
+# Одна ветка, несколько масштабов, 10 итераций
+./run_repeated_scaling.sh ~/.local/bin/tarantool-master master 10 1 10 50
+./run_repeated_scaling.sh ~/.local/bin/tarantool-so    so    10 1 10 50
+
+# Построить графики (base=master, target=so)
+uv run ./scripts/plot_statistical.py --base master --target so
+uv run ./scripts/compare_builds.py   --base master --target so
+
+# Если у target нет sort_order — исключить этот бенчмарк из сравнения
+uv run ./scripts/plot_statistical.py --base master --target myco --no-sort-order
+uv run ./scripts/compare_builds.py   --base master --target myco --no-sort-order
 ```
 
-- **tarantool_binary** -- path to the Tarantool executable
-- **prefix** -- name for the result directory
-- **iterations** -- number of times to repeat each test (for confidence intervals)
-- **scale** -- data size multiplier (default: 1)
+## Параметры скриптов
 
-| Scale | Memtx Rows | Vinyl Rows | Sort Order Rows |
-|-------|------------|------------|-----------------|
-| 1     | 100K       | 50K        | 60K             |
-| 10    | 1M         | 500K       | 600K            |
-| 50    | 5M         | 2.5M       | 3M              |
+### `run_repeated_scaling.sh`
 
-## Reproducing Results
+```
+./run_repeated_scaling.sh <binary> <prefix> <iterations> <scale1> [scale2] ...
+```
 
-Use the provided `Makefile` to run the full comparative suite:
+| Параметр | Описание |
+|---|---|
+| `binary` | Путь к бинарнику tarantool |
+| `prefix` | Имя ветки/сборки (используется как ключ в CSV) |
+| `iterations` | Число повторов на каждый scale (для доверительных интервалов) |
+| `scale` | Коэффициент объёма данных (1 → базовый, 10 → ×10 строк) |
+
+| Scale | Memtx строк | Vinyl строк | Sort Order строк |
+|---|---|---|---|
+| 1 | 100 000 | 50 000 | 60 000 |
+| 10 | 1 000 000 | 500 000 | 600 000 |
+| 50 | 5 000 000 | 2 500 000 | 3 000 000 |
+
+### `plot_statistical.py` / `compare_builds.py`
+
+| Флаг | По умолчанию | Описание |
+|---|---|---|
+| `--base` | `master` | Имя базовой ветки (prefix в CSV) |
+| `--target` | `so` | Имя целевой ветки |
+| `--results` | `results` | Директория с результатами |
+| `--output` | `plots_stat` | Директория для графиков (plot_statistical) |
+| `--no-sort-order` | выключен | Исключить bench\_sort\_order из сравнения |
+
+## Структура результатов
+
+```
+results/
+  <prefix>_s<scale>_i<iter>/
+    summary.csv          # TPS по каждой операции
+    meta.txt             # бинарник, версия, дата
+    bench_memtx/
+    bench_vinyl/
+    bench_sort_order/
+```
+
+## Зависимости
+
+- Tarantool 2.11+
+- Python 3.10+ (`pandas`, `matplotlib`, `seaborn`, `scipy`)
+- `uv` для управления окружением
 
 ```bash
-# Set up Python environment
 uv sync
-
-# Run all benchmarks and generate plots
-make all
 ```
-
-## Metrics
-
-The benchmarks report:
-
-- **Throughput** (TPS - Transactions Per Second)
-- **Execution Time** (seconds)
-- **Scaling Ratios** (Ratio of TPS between versions)
-
-## Requirements
-
-- Tarantool (2.11+ recommended)
-- Python 3.10+ (with pandas, matplotlib, seaborn)
-- `uv` for dependency management
-
-## License
-
-BSD-2-Clause

@@ -1,6 +1,6 @@
 #!/usr/bin/env tarantool
 --
--- Memtx engine benchmark: INSERT, SELECT (point + range), DELETE
+-- Memtx engine benchmark: INSERT, SELECT (point + range), UPDATE, REPLACE, DELETE
 -- No sort_order used — runs on both master and patched builds.
 -- Use to detect regressions introduced by the sort_order change.
 --
@@ -89,12 +89,13 @@ io.flush()
 
 do
     local base = NUM_ROWS
-    t0 = clock.monotonic()
-    for i = 1, BENCH_OPS do
-        local id = base + i
-        s:replace({ id, id % 1000, id % 500, make_val(id) })
-    end
-    report('INSERT', BENCH_OPS, clock.monotonic() - t0)
+    local elapsed = clock.bench(function()
+        for i = 1, BENCH_OPS do
+            local id = base + i
+            s:insert({ id, id % 1000, id % 500, make_val(id) })
+        end
+    end)[1]
+    report('INSERT', BENCH_OPS, elapsed)
 end
 
 -------------------------------------------------------------------------------
@@ -102,11 +103,12 @@ end
 -------------------------------------------------------------------------------
 
 do
-    t0 = clock.monotonic()
-    for i = 1, BENCH_OPS do
-        s:get(1 + (i % NUM_ROWS))
-    end
-    report('SELECT_POINT', BENCH_OPS, clock.monotonic() - t0)
+    local elapsed = clock.bench(function()
+        for i = 1, BENCH_OPS do
+            s:get(1 + (i % NUM_ROWS))
+        end
+    end)[1]
+    report('SELECT_POINT', BENCH_OPS, elapsed)
 end
 
 -------------------------------------------------------------------------------
@@ -114,11 +116,39 @@ end
 -------------------------------------------------------------------------------
 
 do
-    t0 = clock.monotonic()
-    for i = 1, BENCH_OPS do
-        s.index.sec:select({ i % 1000 }, { limit = 10 })
-    end
-    report('SELECT_RANGE', BENCH_OPS, clock.monotonic() - t0)
+    local elapsed = clock.bench(function()
+        for i = 1, BENCH_OPS do
+            s.index.sec:select({ i % 1000 }, { limit = 10 })
+        end
+    end)[1]
+    report('SELECT_RANGE', BENCH_OPS, elapsed)
+end
+
+-------------------------------------------------------------------------------
+-- UPDATE  (increments field 'a' on rows cycling through the loaded dataset)
+-------------------------------------------------------------------------------
+
+do
+    local elapsed = clock.bench(function()
+        for i = 1, BENCH_OPS do
+            s:update(1 + (i % NUM_ROWS), { { '+', 'a', 1 } })
+        end
+    end)[1]
+    report('UPDATE', BENCH_OPS, elapsed)
+end
+
+-------------------------------------------------------------------------------
+-- REPLACE  (overwrites existing rows cycling through the loaded dataset)
+-------------------------------------------------------------------------------
+
+do
+    local elapsed = clock.bench(function()
+        for i = 1, BENCH_OPS do
+            local id = 1 + (i % NUM_ROWS)
+            s:replace({ id, id % 1000, id % 500, make_val(id + 1) })
+        end
+    end)[1]
+    report('REPLACE', BENCH_OPS, elapsed)
 end
 
 -------------------------------------------------------------------------------
@@ -127,11 +157,12 @@ end
 
 do
     local n = math.min(BENCH_OPS, NUM_ROWS)
-    t0 = clock.monotonic()
-    for i = 1, n do
-        s:delete(i)
-    end
-    report('DELETE', n, clock.monotonic() - t0)
+    local elapsed = clock.bench(function()
+        for i = 1, n do
+            s:delete(i)
+        end
+    end)[1]
+    report('DELETE', n, elapsed)
 end
 
 print('[BENCH] DONE')

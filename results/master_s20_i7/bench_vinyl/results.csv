@@ -1,5 +1,7 @@
 prefix,benchmark,label,ops,elapsed_s,tps
-master_s20_i7,bench_vinyl,INSERT,400000,5.927,67493
-master_s20_i7,bench_vinyl,SELECT_POINT,400000,5.700,70174
-master_s20_i7,bench_vinyl,SELECT_RANGE,400000,3.199,125020
-master_s20_i7,bench_vinyl,DELETE,400000,5.415,73866
+master_s20_i5,bench_vinyl,INSERT,400000,5.834,68560
+master_s20_i5,bench_vinyl,SELECT_POINT,400000,5.973,66965
+master_s20_i5,bench_vinyl,SELECT_RANGE,400000,3.196,125159
+master_s20_i5,bench_vinyl,UPDATE,400000,6.468,61841
+master_s20_i5,bench_vinyl,REPLACE,400000,7.030,56900
+master_s20_i5,bench_vinyl,DELETE,400000,5.202,76894

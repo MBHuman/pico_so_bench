@@ -1,1 +1,1 @@
-2026-06-09 16:06:03.300 [580179] main txn.c:799 W> too long WAL write: 1 rows at LSN 700004: 1.585 sec
+2026-06-11 19:02:07.506 [295577] main txn.c:799 W> too long WAL write: 1 rows at LSN 700004: 1.668 sec

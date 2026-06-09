@@ -1,5 +1,5 @@
-prefix=master_s20_i5
+prefix=master_s20_i3
 scale=20
 binary=/home/mbhuman/.local/bin/tarantool-master
 version=Tarantool 2.11.8-372-g5043aa505
-date=2026-06-09T14:36:31Z
+date=2026-06-11T13:18:16Z

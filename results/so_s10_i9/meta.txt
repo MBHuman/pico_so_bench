@@ -1,5 +1,5 @@
 prefix=so_s10_i9
 scale=10
 binary=/home/mbhuman/.local/bin/tarantool-so
-version=Tarantool 2.11.8-378-g027adef99
-date=2026-06-09T13:12:56Z
+version=Tarantool 2.11.8-378-gd4a4d76d2
+date=2026-06-11T16:15:25Z

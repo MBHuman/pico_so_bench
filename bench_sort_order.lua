@@ -5,7 +5,7 @@
 -- Will exit with error on unpatched builds — that is expected.
 --
 -- Creates three spaces with differently-ordered secondary indexes on the
--- same (a, b, c) key and compares INSERT / SELECT_RANGE / DELETE TPS.
+-- same (a, b, c) key and compares INSERT / SELECT_RANGE / UPDATE / REPLACE / DELETE TPS.
 --
 --   plain    : parts = {a asc, b asc, c asc}  (equivalent to no sort_order)
 --   all_desc : parts = {a desc, b desc, c desc}
@@ -151,40 +151,65 @@ local function run_variant(name, sp)
     -- INSERT (rows beyond NUM_ROWS)
     do
         local base = NUM_ROWS
-        local t0 = clock.monotonic()
-        for i = 1, BENCH_OPS do
-            local id = base + i
-            sp:replace({ id, id % 500, id % 200, id % 100, make_val(id) })
-        end
-        report(tag .. ' INSERT', BENCH_OPS, clock.monotonic() - t0)
+        local elapsed = clock.bench(function()
+            for i = 1, BENCH_OPS do
+                local id = base + i
+                sp:insert({ id, id % 500, id % 200, id % 100, make_val(id) })
+            end
+        end)[1]
+        report(tag .. ' INSERT', BENCH_OPS, elapsed)
     end
 
     -- SELECT range on secondary (prefix on first key part)
     do
-        local t0 = clock.monotonic()
-        for i = 1, BENCH_OPS do
-            sp.index.sec:select({ i % 500 }, { limit = 10 })
-        end
-        report(tag .. ' SELECT_RANGE', BENCH_OPS, clock.monotonic() - t0)
+        local elapsed = clock.bench(function()
+            for i = 1, BENCH_OPS do
+                sp.index.sec:select({ i % 500 }, { limit = 10 })
+            end
+        end)[1]
+        report(tag .. ' SELECT_RANGE', BENCH_OPS, elapsed)
     end
 
     -- SELECT range reverse (tests the opposite traversal direction)
     do
-        local t0 = clock.monotonic()
-        for i = 1, BENCH_OPS do
-            sp.index.sec:select({ i % 500 }, { limit = 10, iterator = 'LE' })
-        end
-        report(tag .. ' SELECT_RANGE_REV', BENCH_OPS, clock.monotonic() - t0)
+        local elapsed = clock.bench(function()
+            for i = 1, BENCH_OPS do
+                sp.index.sec:select({ i % 500 }, { limit = 10, iterator = 'LE' })
+            end
+        end)[1]
+        report(tag .. ' SELECT_RANGE_REV', BENCH_OPS, elapsed)
+    end
+
+    -- UPDATE (increments field 'a' on rows cycling through the loaded dataset)
+    do
+        local elapsed = clock.bench(function()
+            for i = 1, BENCH_OPS do
+                sp:update(1 + (i % NUM_ROWS), { { '+', 'a', 1 } })
+            end
+        end)[1]
+        report(tag .. ' UPDATE', BENCH_OPS, elapsed)
+    end
+
+    -- REPLACE (overwrites existing rows cycling through the loaded dataset)
+    do
+        local elapsed = clock.bench(function()
+            for i = 1, BENCH_OPS do
+                local id = 1 + (i % NUM_ROWS)
+                sp:replace({ id, id % 500, id % 200, id % 100, make_val(id + 1) })
+            end
+        end)[1]
+        report(tag .. ' REPLACE', BENCH_OPS, elapsed)
     end
 
     -- DELETE
     do
         local n = math.min(BENCH_OPS, NUM_ROWS)
-        local t0 = clock.monotonic()
-        for i = 1, n do
-            sp:delete(i)
-        end
-        report(tag .. ' DELETE', n, clock.monotonic() - t0)
+        local elapsed = clock.bench(function()
+            for i = 1, n do
+                sp:delete(i)
+            end
+        end)[1]
+        report(tag .. ' DELETE', n, elapsed)
     end
 end
 

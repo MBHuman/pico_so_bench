@@ -2,4 +2,4 @@ prefix=master_s10_i10
 scale=10
 binary=/home/mbhuman/.local/bin/tarantool-master
 version=Tarantool 2.11.8-372-g5043aa505
-date=2026-06-09T14:26:58Z
+date=2026-06-11T13:08:31Z

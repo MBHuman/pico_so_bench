@@ -1,21 +1,27 @@
 sort_order benchmark — scale=30  rows=1800000  bench_ops=900000
 
 --- variant: plain ---
-[BENCH] plain      INSERT           ops=900000    elapsed= 11.704s  TPS=76897
-[BENCH] plain      SELECT_RANGE     ops=900000    elapsed=  3.061s  TPS=293976
-[BENCH] plain      SELECT_RANGE_REV  ops=900000    elapsed=  3.757s  TPS=239557
-[BENCH] plain      DELETE           ops=900000    elapsed= 10.190s  TPS=88325
+[BENCH] plain      INSERT           ops=900000    elapsed= 10.341s  TPS=87029
+[BENCH] plain      SELECT_RANGE     ops=900000    elapsed=  3.172s  TPS=283737
+[BENCH] plain      SELECT_RANGE_REV  ops=900000    elapsed=  3.969s  TPS=226757
+[BENCH] plain      UPDATE           ops=900000    elapsed= 12.744s  TPS=70621
+[BENCH] plain      REPLACE          ops=900000    elapsed= 15.184s  TPS=59273
+[BENCH] plain      DELETE           ops=900000    elapsed= 10.156s  TPS=88616
 
 --- variant: all_desc ---
-[BENCH] all_desc   INSERT           ops=900000    elapsed= 11.524s  TPS=78095
-[BENCH] all_desc   SELECT_RANGE     ops=900000    elapsed=  3.021s  TPS=297868
-[BENCH] all_desc   SELECT_RANGE_REV  ops=900000    elapsed=  3.691s  TPS=243841
-[BENCH] all_desc   DELETE           ops=900000    elapsed=  9.483s  TPS=94905
+[BENCH] all_desc   INSERT           ops=900000    elapsed= 11.680s  TPS=77055
+[BENCH] all_desc   SELECT_RANGE     ops=900000    elapsed=  3.227s  TPS=278873
+[BENCH] all_desc   SELECT_RANGE_REV  ops=900000    elapsed=  3.905s  TPS=230455
+[BENCH] all_desc   UPDATE           ops=900000    elapsed= 12.076s  TPS=74531
+[BENCH] all_desc   REPLACE          ops=900000    elapsed= 15.757s  TPS=57116
+[BENCH] all_desc   DELETE           ops=900000    elapsed= 11.341s  TPS=79358
 
 --- variant: mixed ---
-[BENCH] mixed      INSERT           ops=900000    elapsed= 11.719s  TPS=76796
-[BENCH] mixed      SELECT_RANGE     ops=900000    elapsed=  2.991s  TPS=300893
-[BENCH] mixed      SELECT_RANGE_REV  ops=900000    elapsed=  3.648s  TPS=246710
-[BENCH] mixed      DELETE           ops=900000    elapsed= 11.274s  TPS=79830
+[BENCH] mixed      INSERT           ops=900000    elapsed= 12.386s  TPS=72661
+[BENCH] mixed      SELECT_RANGE     ops=900000    elapsed=  3.189s  TPS=282214
+[BENCH] mixed      SELECT_RANGE_REV  ops=900000    elapsed=  4.131s  TPS=217860
+[BENCH] mixed      UPDATE           ops=900000    elapsed= 13.251s  TPS=67917
+[BENCH] mixed      REPLACE          ops=900000    elapsed= 16.048s  TPS=56083
+[BENCH] mixed      DELETE           ops=900000    elapsed=  9.880s  TPS=91093
 
 [BENCH] DONE

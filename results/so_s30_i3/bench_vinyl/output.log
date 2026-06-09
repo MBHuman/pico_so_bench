@@ -3,10 +3,12 @@ Load done: 1500000 rows in 24.5s
 Taking snapshot ...
 Snapshot done
 
-[BENCH] INSERT                  ops=600000    elapsed=  9.469s  TPS=63367
-[BENCH] SELECT_POINT            ops=600000    elapsed=  8.845s  TPS=67834
-[BENCH] SELECT_RANGE            ops=600000    elapsed=  4.877s  TPS=123036
-[BENCH] DELETE                  ops=600000    elapsed=  7.033s  TPS=85306
+[BENCH] INSERT                  ops=600000    elapsed=  9.543s  TPS=62871
+[BENCH] SELECT_POINT            ops=600000    elapsed= 11.059s  TPS=54255
+[BENCH] SELECT_RANGE            ops=600000    elapsed=  5.180s  TPS=115825
+[BENCH] UPDATE                  ops=600000    elapsed= 11.614s  TPS=51661
+[BENCH] REPLACE                 ops=600000    elapsed= 11.980s  TPS=50082
+[BENCH] DELETE                  ops=600000    elapsed=  8.074s  TPS=74309
 
 [VINYL] pk: ranges=1 runs=1 disk_bytes=161662043
 [VINYL] bloom: hit=579587 miss=20413
