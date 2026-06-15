@@ -22,4 +22,6 @@
 
 ## Бенчмарки
 
-- [Сравнение](./MASTER_VS_SO_BRANCH.md) `2.11.8-picodata` с `sort-order-support`
+- [master vs so](./MASTER_VS_SO_BRANCH.md) — `2.11.8-picodata` vs `sort-order-support`
+- [master vs so-inline](./MASTER_VS_SO-INLINE.md) — `2.11.8-picodata` vs `sort-order-support` с inline
+- [so vs so-inline](./SO_VS_SO-INLINE.md) — `sort-order-support` vs `sort-order-support` с inline

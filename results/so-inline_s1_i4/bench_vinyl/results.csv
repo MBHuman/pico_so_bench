@@ -1,0 +1,7 @@
+prefix,benchmark,label,ops,elapsed_s,tps
+so-inline_s1_i4,bench_vinyl,INSERT,20000,0.221,90484
+so-inline_s1_i4,bench_vinyl,SELECT_POINT,20000,0.342,58517
+so-inline_s1_i4,bench_vinyl,SELECT_RANGE,20000,0.261,76521
+so-inline_s1_i4,bench_vinyl,UPDATE,20000,0.313,63956
+so-inline_s1_i4,bench_vinyl,REPLACE,20000,0.279,71673
+so-inline_s1_i4,bench_vinyl,DELETE,20000,0.282,70797

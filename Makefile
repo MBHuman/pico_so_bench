@@ -1,14 +1,16 @@
 # Tarantool Benchmark Makefile
 
 TT_MASTER = $(HOME)/.local/bin/tarantool-master
-TT_SO     = $(HOME)/.local/bin/tarantool-so
+TT_SO     = $(HOME)/.local/bin/tarantool-so-inline
+TT_SO_INLINE = $(HOME)/.local/bin/tarantool-so-inline
 
 # Branch names used as prefixes in result CSVs and passed to plot scripts
 BRANCH_BASE   = master
 BRANCH_TARGET = so
+BRANCH_SO_INLINE = so-inline
 
-ITERATIONS = 2
-SCALES     = 20
+ITERATIONS = 10
+SCALES     = 1 5 10 20 30
 
 # Set to 1 if the target branch does NOT have sort_order support
 # (bench_sort_order will be excluded from comparison plots)
@@ -34,9 +36,16 @@ bench-master:
 bench-so:
 	./run_repeated_scaling.sh $(TT_SO) $(BRANCH_TARGET) $(ITERATIONS) $(SCALES)
 
+bench-so-inline:
+	./run_repeated_scaling.sh $(TT_SO_INLINE) $(BRANCH_SO_INLINE) $(ITERATIONS) $(SCALES)
+
 plot:
-	uv run ./scripts/plot_statistical.py --base $(BRANCH_BASE) --target $(BRANCH_TARGET) $(_SORT_ORDER_FLAG)
-	uv run ./scripts/compare_builds.py   --base $(BRANCH_BASE) --target $(BRANCH_TARGET) $(_SORT_ORDER_FLAG)
+	uv run ./scripts/plot_statistical.py --base $(BRANCH_BASE)   --target $(BRANCH_TARGET)    --output plots_stat/master2so       $(_SORT_ORDER_FLAG)
+	uv run ./scripts/plot_statistical.py --base $(BRANCH_BASE)   --target $(BRANCH_SO_INLINE) --output plots_stat/master2so-inline
+	uv run ./scripts/plot_statistical.py --base $(BRANCH_TARGET) --target $(BRANCH_SO_INLINE) --output plots_stat/so2so-inline
+	uv run ./scripts/compare_builds.py   --base $(BRANCH_BASE)   --target $(BRANCH_TARGET)    $(_SORT_ORDER_FLAG)
+	uv run ./scripts/compare_builds.py   --base $(BRANCH_BASE)   --target $(BRANCH_SO_INLINE)
+	uv run ./scripts/compare_builds.py   --base $(BRANCH_TARGET) --target $(BRANCH_SO_INLINE)
 
 flamegraph: flamegraph-sort-order flamegraph-memtx flamegraph-vinyl
 

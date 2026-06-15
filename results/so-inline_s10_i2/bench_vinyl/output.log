@@ -1,0 +1,16 @@
+Loading 500000 rows ...
+Load done: 500000 rows in 8.0s
+Taking snapshot ...
+Snapshot done
+
+[BENCH] INSERT                  ops=200000    elapsed=  3.252s  TPS=61492
+[BENCH] SELECT_POINT            ops=200000    elapsed=  3.427s  TPS=58364
+[BENCH] SELECT_RANGE            ops=200000    elapsed=  1.685s  TPS=118696
+[BENCH] UPDATE                  ops=200000    elapsed=  3.358s  TPS=59565
+[BENCH] REPLACE                 ops=200000    elapsed=  3.995s  TPS=50063
+[BENCH] DELETE                  ops=200000    elapsed=  2.680s  TPS=74629
+
+[VINYL] pk: ranges=1 runs=1 disk_bytes=53712883
+[VINYL] bloom: hit=193251 miss=6749
+[VINYL] scheduler: dump_count=1 tasks_completed=2
+[BENCH] DONE

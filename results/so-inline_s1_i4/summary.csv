@@ -1,0 +1,31 @@
+prefix,benchmark,label,ops,elapsed_s,tps
+so-inline_s1_i4,bench_memtx,INSERT,50000,0.606,82490
+so-inline_s1_i4,bench_memtx,SELECT_POINT,50000,0.025,1992152
+so-inline_s1_i4,bench_memtx,SELECT_RANGE,50000,0.195,256951
+so-inline_s1_i4,bench_memtx,UPDATE,50000,0.670,74600
+so-inline_s1_i4,bench_memtx,REPLACE,50000,0.695,71899
+so-inline_s1_i4,bench_memtx,DELETE,50000,0.515,97154
+so-inline_s1_i4,bench_vinyl,INSERT,20000,0.221,90484
+so-inline_s1_i4,bench_vinyl,SELECT_POINT,20000,0.342,58517
+so-inline_s1_i4,bench_vinyl,SELECT_RANGE,20000,0.261,76521
+so-inline_s1_i4,bench_vinyl,UPDATE,20000,0.313,63956
+so-inline_s1_i4,bench_vinyl,REPLACE,20000,0.279,71673
+so-inline_s1_i4,bench_vinyl,DELETE,20000,0.282,70797
+so-inline_s1_i4,bench_sort_order,plain      INSERT,30000,0.413,72586
+so-inline_s1_i4,bench_sort_order,plain      SELECT_RANGE,30000,0.110,272997
+so-inline_s1_i4,bench_sort_order,plain      SELECT_RANGE_REV,30000,0.105,284972
+so-inline_s1_i4,bench_sort_order,plain      UPDATE,30000,0.410,73197
+so-inline_s1_i4,bench_sort_order,plain      REPLACE,30000,0.388,77337
+so-inline_s1_i4,bench_sort_order,plain      DELETE,30000,0.285,105137
+so-inline_s1_i4,bench_sort_order,all_desc   INSERT,30000,0.327,91673
+so-inline_s1_i4,bench_sort_order,all_desc   SELECT_RANGE,30000,0.110,272846
+so-inline_s1_i4,bench_sort_order,all_desc   SELECT_RANGE_REV,30000,0.102,295539
+so-inline_s1_i4,bench_sort_order,all_desc   UPDATE,30000,0.341,87923
+so-inline_s1_i4,bench_sort_order,all_desc   REPLACE,30000,0.448,66980
+so-inline_s1_i4,bench_sort_order,all_desc   DELETE,30000,0.362,82908
+so-inline_s1_i4,bench_sort_order,mixed      INSERT,30000,0.429,69992
+so-inline_s1_i4,bench_sort_order,mixed      SELECT_RANGE,30000,0.109,274536
+so-inline_s1_i4,bench_sort_order,mixed      SELECT_RANGE_REV,30000,0.101,295611
+so-inline_s1_i4,bench_sort_order,mixed      UPDATE,30000,0.331,90728
+so-inline_s1_i4,bench_sort_order,mixed      REPLACE,30000,0.383,78293
+so-inline_s1_i4,bench_sort_order,mixed      DELETE,30000,0.298,100834

@@ -1,0 +1,7 @@
+prefix,benchmark,label,ops,elapsed_s,tps
+so-inline_s1_i8,bench_memtx,INSERT,50000,0.622,80360
+so-inline_s1_i8,bench_memtx,SELECT_POINT,50000,0.023,2168327
+so-inline_s1_i8,bench_memtx,SELECT_RANGE,50000,0.183,273618
+so-inline_s1_i8,bench_memtx,UPDATE,50000,0.580,86151
+so-inline_s1_i8,bench_memtx,REPLACE,50000,0.561,89120
+so-inline_s1_i8,bench_memtx,DELETE,50000,0.463,107923

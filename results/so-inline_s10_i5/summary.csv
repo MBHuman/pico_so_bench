@@ -1,0 +1,31 @@
+prefix,benchmark,label,ops,elapsed_s,tps
+so-inline_s10_i5,bench_memtx,INSERT,500000,6.113,81793
+so-inline_s10_i5,bench_memtx,SELECT_POINT,500000,0.187,2673233
+so-inline_s10_i5,bench_memtx,SELECT_RANGE,500000,1.889,264726
+so-inline_s10_i5,bench_memtx,UPDATE,500000,7.636,65480
+so-inline_s10_i5,bench_memtx,REPLACE,500000,8.189,61059
+so-inline_s10_i5,bench_memtx,DELETE,500000,6.123,81659
+so-inline_s10_i5,bench_vinyl,INSERT,200000,2.972,67303
+so-inline_s10_i5,bench_vinyl,SELECT_POINT,200000,3.237,61777
+so-inline_s10_i5,bench_vinyl,SELECT_RANGE,200000,1.809,110556
+so-inline_s10_i5,bench_vinyl,UPDATE,200000,3.675,54424
+so-inline_s10_i5,bench_vinyl,REPLACE,200000,3.680,54353
+so-inline_s10_i5,bench_vinyl,DELETE,200000,2.655,75319
+so-inline_s10_i5,bench_sort_order,plain      INSERT,300000,4.006,74888
+so-inline_s10_i5,bench_sort_order,plain      SELECT_RANGE,300000,1.066,281528
+so-inline_s10_i5,bench_sort_order,plain      SELECT_RANGE_REV,300000,1.041,288109
+so-inline_s10_i5,bench_sort_order,plain      UPDATE,300000,4.489,66822
+so-inline_s10_i5,bench_sort_order,plain      REPLACE,300000,4.909,61107
+so-inline_s10_i5,bench_sort_order,plain      DELETE,300000,3.686,81390
+so-inline_s10_i5,bench_sort_order,all_desc   INSERT,300000,4.081,73505
+so-inline_s10_i5,bench_sort_order,all_desc   SELECT_RANGE,300000,1.101,272578
+so-inline_s10_i5,bench_sort_order,all_desc   SELECT_RANGE_REV,300000,1.079,278111
+so-inline_s10_i5,bench_sort_order,all_desc   UPDATE,300000,4.668,64266
+so-inline_s10_i5,bench_sort_order,all_desc   REPLACE,300000,5.045,59462
+so-inline_s10_i5,bench_sort_order,all_desc   DELETE,300000,3.662,81931
+so-inline_s10_i5,bench_sort_order,mixed      INSERT,300000,3.984,75296
+so-inline_s10_i5,bench_sort_order,mixed      SELECT_RANGE,300000,1.044,287290
+so-inline_s10_i5,bench_sort_order,mixed      SELECT_RANGE_REV,300000,1.046,286719
+so-inline_s10_i5,bench_sort_order,mixed      UPDATE,300000,4.596,65274
+so-inline_s10_i5,bench_sort_order,mixed      REPLACE,300000,4.890,61343
+so-inline_s10_i5,bench_sort_order,mixed      DELETE,300000,3.669,81756

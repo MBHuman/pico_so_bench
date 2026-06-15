@@ -1,0 +1,31 @@
+prefix,benchmark,label,ops,elapsed_s,tps
+so-inline_s30_i3,bench_memtx,INSERT,1500000,20.767,72228
+so-inline_s30_i3,bench_memtx,SELECT_POINT,1500000,0.590,2542594
+so-inline_s30_i3,bench_memtx,SELECT_RANGE,1500000,5.744,261149
+so-inline_s30_i3,bench_memtx,UPDATE,1500000,23.627,63487
+so-inline_s30_i3,bench_memtx,REPLACE,1500000,26.761,56050
+so-inline_s30_i3,bench_memtx,DELETE,1500000,19.347,77533
+so-inline_s30_i3,bench_vinyl,INSERT,600000,10.071,59577
+so-inline_s30_i3,bench_vinyl,SELECT_POINT,600000,10.427,57540
+so-inline_s30_i3,bench_vinyl,SELECT_RANGE,600000,5.093,117800
+so-inline_s30_i3,bench_vinyl,UPDATE,600000,11.886,50478
+so-inline_s30_i3,bench_vinyl,REPLACE,600000,12.291,48816
+so-inline_s30_i3,bench_vinyl,DELETE,600000,8.523,70397
+so-inline_s30_i3,bench_sort_order,plain      INSERT,900000,11.197,80377
+so-inline_s30_i3,bench_sort_order,plain      SELECT_RANGE,900000,3.127,287810
+so-inline_s30_i3,bench_sort_order,plain      SELECT_RANGE_REV,900000,3.834,234726
+so-inline_s30_i3,bench_sort_order,plain      UPDATE,900000,13.495,66691
+so-inline_s30_i3,bench_sort_order,plain      REPLACE,900000,15.934,56484
+so-inline_s30_i3,bench_sort_order,plain      DELETE,900000,11.880,75756
+so-inline_s30_i3,bench_sort_order,all_desc   INSERT,900000,13.682,65778
+so-inline_s30_i3,bench_sort_order,all_desc   SELECT_RANGE,900000,3.209,280472
+so-inline_s30_i3,bench_sort_order,all_desc   SELECT_RANGE_REV,900000,3.733,241073
+so-inline_s30_i3,bench_sort_order,all_desc   UPDATE,900000,14.161,63553
+so-inline_s30_i3,bench_sort_order,all_desc   REPLACE,900000,16.036,56124
+so-inline_s30_i3,bench_sort_order,all_desc   DELETE,900000,11.797,76290
+so-inline_s30_i3,bench_sort_order,mixed      INSERT,900000,13.810,65171
+so-inline_s30_i3,bench_sort_order,mixed      SELECT_RANGE,900000,3.294,273202
+so-inline_s30_i3,bench_sort_order,mixed      SELECT_RANGE_REV,900000,3.675,244905
+so-inline_s30_i3,bench_sort_order,mixed      UPDATE,900000,14.518,61990
+so-inline_s30_i3,bench_sort_order,mixed      REPLACE,900000,16.635,54101
+so-inline_s30_i3,bench_sort_order,mixed      DELETE,900000,11.391,79011

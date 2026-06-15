@@ -1,0 +1,19 @@
+prefix,benchmark,label,ops,elapsed_s,tps
+so-inline_s10_i1,bench_sort_order,plain      INSERT,300000,4.136,72537
+so-inline_s10_i1,bench_sort_order,plain      SELECT_RANGE,300000,1.144,262176
+so-inline_s10_i1,bench_sort_order,plain      SELECT_RANGE_REV,300000,1.023,293195
+so-inline_s10_i1,bench_sort_order,plain      UPDATE,300000,4.242,70728
+so-inline_s10_i1,bench_sort_order,plain      REPLACE,300000,5.052,59381
+so-inline_s10_i1,bench_sort_order,plain      DELETE,300000,3.742,80169
+so-inline_s10_i1,bench_sort_order,all_desc   INSERT,300000,4.187,71650
+so-inline_s10_i1,bench_sort_order,all_desc   SELECT_RANGE,300000,1.086,276337
+so-inline_s10_i1,bench_sort_order,all_desc   SELECT_RANGE_REV,300000,1.037,289261
+so-inline_s10_i1,bench_sort_order,all_desc   UPDATE,300000,4.489,66828
+so-inline_s10_i1,bench_sort_order,all_desc   REPLACE,300000,4.667,64278
+so-inline_s10_i1,bench_sort_order,all_desc   DELETE,300000,3.404,88125
+so-inline_s10_i1,bench_sort_order,mixed      INSERT,300000,3.459,86732
+so-inline_s10_i1,bench_sort_order,mixed      SELECT_RANGE,300000,1.069,280737
+so-inline_s10_i1,bench_sort_order,mixed      SELECT_RANGE_REV,300000,1.024,293070
+so-inline_s10_i1,bench_sort_order,mixed      UPDATE,300000,4.485,66890
+so-inline_s10_i1,bench_sort_order,mixed      REPLACE,300000,5.416,55394
+so-inline_s10_i1,bench_sort_order,mixed      DELETE,300000,3.472,86413

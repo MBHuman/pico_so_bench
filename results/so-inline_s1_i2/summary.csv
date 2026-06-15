@@ -1,0 +1,31 @@
+prefix,benchmark,label,ops,elapsed_s,tps
+so-inline_s1_i2,bench_memtx,INSERT,50000,0.573,87193
+so-inline_s1_i2,bench_memtx,SELECT_POINT,50000,0.025,2038310
+so-inline_s1_i2,bench_memtx,SELECT_RANGE,50000,0.181,276780
+so-inline_s1_i2,bench_memtx,UPDATE,50000,0.710,70421
+so-inline_s1_i2,bench_memtx,REPLACE,50000,0.672,74377
+so-inline_s1_i2,bench_memtx,DELETE,50000,0.613,81560
+so-inline_s1_i2,bench_vinyl,INSERT,20000,0.327,61248
+so-inline_s1_i2,bench_vinyl,SELECT_POINT,20000,0.319,62722
+so-inline_s1_i2,bench_vinyl,SELECT_RANGE,20000,0.213,93916
+so-inline_s1_i2,bench_vinyl,UPDATE,20000,0.362,55187
+so-inline_s1_i2,bench_vinyl,REPLACE,20000,0.488,41005
+so-inline_s1_i2,bench_vinyl,DELETE,20000,0.321,62330
+so-inline_s1_i2,bench_sort_order,plain      INSERT,30000,0.466,64422
+so-inline_s1_i2,bench_sort_order,plain      SELECT_RANGE,30000,0.112,268560
+so-inline_s1_i2,bench_sort_order,plain      SELECT_RANGE_REV,30000,0.092,326552
+so-inline_s1_i2,bench_sort_order,plain      UPDATE,30000,0.391,76747
+so-inline_s1_i2,bench_sort_order,plain      REPLACE,30000,0.510,58771
+so-inline_s1_i2,bench_sort_order,plain      DELETE,30000,0.337,88925
+so-inline_s1_i2,bench_sort_order,all_desc   INSERT,30000,0.363,82662
+so-inline_s1_i2,bench_sort_order,all_desc   SELECT_RANGE,30000,0.115,261743
+so-inline_s1_i2,bench_sort_order,all_desc   SELECT_RANGE_REV,30000,0.113,264916
+so-inline_s1_i2,bench_sort_order,all_desc   UPDATE,30000,0.556,53962
+so-inline_s1_i2,bench_sort_order,all_desc   REPLACE,30000,0.419,71577
+so-inline_s1_i2,bench_sort_order,all_desc   DELETE,30000,0.292,102666
+so-inline_s1_i2,bench_sort_order,mixed      INSERT,30000,0.382,78562
+so-inline_s1_i2,bench_sort_order,mixed      SELECT_RANGE,30000,0.111,271060
+so-inline_s1_i2,bench_sort_order,mixed      SELECT_RANGE_REV,30000,0.097,310433
+so-inline_s1_i2,bench_sort_order,mixed      UPDATE,30000,0.385,77831
+so-inline_s1_i2,bench_sort_order,mixed      REPLACE,30000,0.463,64861
+so-inline_s1_i2,bench_sort_order,mixed      DELETE,30000,0.299,100267

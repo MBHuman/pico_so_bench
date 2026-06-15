@@ -1,0 +1,5 @@
+prefix=so-inline_s5_i7
+scale=5
+binary=/home/mbhuman/.local/bin/tarantool-so-inline
+version=Tarantool 2.11.8-378-gd4a4d76d2
+date=2026-06-15T11:30:19Z

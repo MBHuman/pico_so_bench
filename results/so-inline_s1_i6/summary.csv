@@ -1,0 +1,31 @@
+prefix,benchmark,label,ops,elapsed_s,tps
+so-inline_s1_i6,bench_memtx,INSERT,50000,0.614,81454
+so-inline_s1_i6,bench_memtx,SELECT_POINT,50000,0.018,2794575
+so-inline_s1_i6,bench_memtx,SELECT_RANGE,50000,0.190,263135
+so-inline_s1_i6,bench_memtx,UPDATE,50000,0.747,66936
+so-inline_s1_i6,bench_memtx,REPLACE,50000,0.693,72132
+so-inline_s1_i6,bench_memtx,DELETE,50000,0.531,94120
+so-inline_s1_i6,bench_vinyl,INSERT,20000,0.469,42609
+so-inline_s1_i6,bench_vinyl,SELECT_POINT,20000,0.308,65036
+so-inline_s1_i6,bench_vinyl,SELECT_RANGE,20000,0.227,88181
+so-inline_s1_i6,bench_vinyl,UPDATE,20000,0.301,66368
+so-inline_s1_i6,bench_vinyl,REPLACE,20000,0.317,62995
+so-inline_s1_i6,bench_vinyl,DELETE,20000,0.270,74161
+so-inline_s1_i6,bench_sort_order,plain      INSERT,30000,0.427,70288
+so-inline_s1_i6,bench_sort_order,plain      SELECT_RANGE,30000,0.115,260081
+so-inline_s1_i6,bench_sort_order,plain      SELECT_RANGE_REV,30000,0.109,275376
+so-inline_s1_i6,bench_sort_order,plain      UPDATE,30000,0.424,70714
+so-inline_s1_i6,bench_sort_order,plain      REPLACE,30000,0.326,92004
+so-inline_s1_i6,bench_sort_order,plain      DELETE,30000,0.351,85466
+so-inline_s1_i6,bench_sort_order,all_desc   INSERT,30000,0.338,88688
+so-inline_s1_i6,bench_sort_order,all_desc   SELECT_RANGE,30000,0.104,289311
+so-inline_s1_i6,bench_sort_order,all_desc   SELECT_RANGE_REV,30000,0.097,310459
+so-inline_s1_i6,bench_sort_order,all_desc   UPDATE,30000,0.285,105172
+so-inline_s1_i6,bench_sort_order,all_desc   REPLACE,30000,0.372,80607
+so-inline_s1_i6,bench_sort_order,all_desc   DELETE,30000,0.316,95032
+so-inline_s1_i6,bench_sort_order,mixed      INSERT,30000,0.340,88334
+so-inline_s1_i6,bench_sort_order,mixed      SELECT_RANGE,30000,0.110,273782
+so-inline_s1_i6,bench_sort_order,mixed      SELECT_RANGE_REV,30000,0.104,288635
+so-inline_s1_i6,bench_sort_order,mixed      UPDATE,30000,0.366,81959
+so-inline_s1_i6,bench_sort_order,mixed      REPLACE,30000,0.464,64636
+so-inline_s1_i6,bench_sort_order,mixed      DELETE,30000,0.313,95754

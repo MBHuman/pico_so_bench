@@ -1,0 +1,31 @@
+prefix,benchmark,label,ops,elapsed_s,tps
+so-inline_s5_i5,bench_memtx,INSERT,250000,3.018,82828
+so-inline_s5_i5,bench_memtx,SELECT_POINT,250000,0.108,2315665
+so-inline_s5_i5,bench_memtx,SELECT_RANGE,250000,0.897,278715
+so-inline_s5_i5,bench_memtx,UPDATE,250000,3.515,71128
+so-inline_s5_i5,bench_memtx,REPLACE,250000,3.857,64809
+so-inline_s5_i5,bench_memtx,DELETE,250000,2.526,98989
+so-inline_s5_i5,bench_vinyl,INSERT,100000,1.382,72340
+so-inline_s5_i5,bench_vinyl,SELECT_POINT,100000,1.793,55786
+so-inline_s5_i5,bench_vinyl,SELECT_RANGE,100000,0.843,118683
+so-inline_s5_i5,bench_vinyl,UPDATE,100000,1.396,71656
+so-inline_s5_i5,bench_vinyl,REPLACE,100000,1.578,63384
+so-inline_s5_i5,bench_vinyl,DELETE,100000,1.325,75465
+so-inline_s5_i5,bench_sort_order,plain      INSERT,150000,2.074,72324
+so-inline_s5_i5,bench_sort_order,plain      SELECT_RANGE,150000,0.527,284745
+so-inline_s5_i5,bench_sort_order,plain      SELECT_RANGE_REV,150000,0.498,301413
+so-inline_s5_i5,bench_sort_order,plain      UPDATE,150000,2.137,70202
+so-inline_s5_i5,bench_sort_order,plain      REPLACE,150000,2.226,67370
+so-inline_s5_i5,bench_sort_order,plain      DELETE,150000,1.704,88010
+so-inline_s5_i5,bench_sort_order,all_desc   INSERT,150000,2.072,72381
+so-inline_s5_i5,bench_sort_order,all_desc   SELECT_RANGE,150000,0.515,291354
+so-inline_s5_i5,bench_sort_order,all_desc   SELECT_RANGE_REV,150000,0.498,301300
+so-inline_s5_i5,bench_sort_order,all_desc   UPDATE,150000,1.949,76976
+so-inline_s5_i5,bench_sort_order,all_desc   REPLACE,150000,2.201,68154
+so-inline_s5_i5,bench_sort_order,all_desc   DELETE,150000,1.603,93600
+so-inline_s5_i5,bench_sort_order,mixed      INSERT,150000,1.792,83726
+so-inline_s5_i5,bench_sort_order,mixed      SELECT_RANGE,150000,0.523,286983
+so-inline_s5_i5,bench_sort_order,mixed      SELECT_RANGE_REV,150000,0.502,298531
+so-inline_s5_i5,bench_sort_order,mixed      UPDATE,150000,1.933,77602
+so-inline_s5_i5,bench_sort_order,mixed      REPLACE,150000,1.990,75388
+so-inline_s5_i5,bench_sort_order,mixed      DELETE,150000,1.712,87623

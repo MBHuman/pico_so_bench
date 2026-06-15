@@ -1,0 +1,31 @@
+prefix,benchmark,label,ops,elapsed_s,tps
+so-inline_s1_i5,bench_memtx,INSERT,50000,0.580,86185
+so-inline_s1_i5,bench_memtx,SELECT_POINT,50000,0.025,2001857
+so-inline_s1_i5,bench_memtx,SELECT_RANGE,50000,0.187,268018
+so-inline_s1_i5,bench_memtx,UPDATE,50000,0.604,82757
+so-inline_s1_i5,bench_memtx,REPLACE,50000,0.635,78689
+so-inline_s1_i5,bench_memtx,DELETE,50000,0.540,92671
+so-inline_s1_i5,bench_vinyl,INSERT,20000,0.342,58425
+so-inline_s1_i5,bench_vinyl,SELECT_POINT,20000,0.390,51232
+so-inline_s1_i5,bench_vinyl,SELECT_RANGE,20000,0.224,89102
+so-inline_s1_i5,bench_vinyl,UPDATE,20000,0.369,54149
+so-inline_s1_i5,bench_vinyl,REPLACE,20000,0.348,57396
+so-inline_s1_i5,bench_vinyl,DELETE,20000,0.268,74687
+so-inline_s1_i5,bench_sort_order,plain      INSERT,30000,0.277,108261
+so-inline_s1_i5,bench_sort_order,plain      SELECT_RANGE,30000,0.106,281956
+so-inline_s1_i5,bench_sort_order,plain      SELECT_RANGE_REV,30000,0.101,297235
+so-inline_s1_i5,bench_sort_order,plain      UPDATE,30000,0.298,100573
+so-inline_s1_i5,bench_sort_order,plain      REPLACE,30000,0.330,90804
+so-inline_s1_i5,bench_sort_order,plain      DELETE,30000,0.250,120019
+so-inline_s1_i5,bench_sort_order,all_desc   INSERT,30000,0.387,77571
+so-inline_s1_i5,bench_sort_order,all_desc   SELECT_RANGE,30000,0.109,275369
+so-inline_s1_i5,bench_sort_order,all_desc   SELECT_RANGE_REV,30000,0.107,280616
+so-inline_s1_i5,bench_sort_order,all_desc   UPDATE,30000,0.408,73588
+so-inline_s1_i5,bench_sort_order,all_desc   REPLACE,30000,0.406,73900
+so-inline_s1_i5,bench_sort_order,all_desc   DELETE,30000,0.350,85809
+so-inline_s1_i5,bench_sort_order,mixed      INSERT,30000,0.365,82224
+so-inline_s1_i5,bench_sort_order,mixed      SELECT_RANGE,30000,0.104,288225
+so-inline_s1_i5,bench_sort_order,mixed      SELECT_RANGE_REV,30000,0.109,276462
+so-inline_s1_i5,bench_sort_order,mixed      UPDATE,30000,0.421,71261
+so-inline_s1_i5,bench_sort_order,mixed      REPLACE,30000,0.425,70529
+so-inline_s1_i5,bench_sort_order,mixed      DELETE,30000,0.332,90383
